@@ -49,9 +49,12 @@ const Cart: React.FC = () => {
     <div className="min-h-screen bg-white px-8  md:px-60 font-sans text-gray-900">
      
       <header className="flex items-center align-middle justify-between mb-24 pt-4">
-       <img src="/images/img_frame_19.png" alt="" className='h-14 rounded-lg '/>
+        <Link to="/">
+         <img src="/images/img_frame_19.png" alt="" className='h-14 rounded-lg '/>
+        </Link>
+      
 
-        <nav className="space-x-6 md:text-lg text-sm font-medium text-gray-700">
+        <nav className="md:space-x-16 space-x-5 md:text-lg text-sm font-medium text-gray-700">
           <Link to="/about" className="hover:border-b-2 border-gray-500 transition-all duration-100">About Us</Link>
           <Link to="/waitlist" className="hover:border-b-2 border-gray-500">Waitlist</Link>
           <Link to="/cart" className="border-b-2 border-gray-500 font-semibold">Cart</Link>
@@ -85,7 +88,7 @@ const Cart: React.FC = () => {
               name="addressOption"
               checked={addNewAddress}
               onChange={() => setAddNewAddress(true)}
-              className="mr-3"
+              className="mr-3 accent-red-600 w-8 h-8"
             />
             <label htmlFor="addNewAddress" className="font-semibold text-2xl  text-gray-900">
               Add New Address

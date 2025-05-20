@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Accordion from '../../components/common/Accordion';
 import { ProductSize } from '../../types/Home';
+import { Link } from 'react-router-dom';
 
 interface ProductSectionProps {
   className?: string;
@@ -101,7 +102,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({ className = "" }) => {
                     <button
                       key={size.value}
                       className={`w-20 h-12 rounded flex items-center justify-center text-sm font-medium transition-colors ${selectedSize === size.value
-                          ? 'bg-black text-[#f6f6f6]'
+                          ? 'bg-black-700 text-[#f6f6f6]'
                           : 'bg-[#d9d9d9] text-[#767676] hover:bg-gray-300'
                         }`}
                       onClick={() => handleSizeSelect(size.value)}
@@ -113,12 +114,12 @@ const ProductSection: React.FC<ProductSectionProps> = ({ className = "" }) => {
               </div>
 
               <div className=" pt-8 mt-20 w-full flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={handleAddToCart}
+                <Link 
+                 to="/cart"
                   className=" text-black-700 w-full md:w-1/3 h-16 border-2 border-[#c2c2c2] rounded-lg flex items-center justify-center text-lg font-medium hover:bg-gray-100 transition-colors"
                 >
                   Add to Cart
-                </button>
+                </Link>
 
                 <button
                   onClick={handleBuyNow}
