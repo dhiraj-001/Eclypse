@@ -75,7 +75,7 @@ const Cart: React.FC = () => {
         </div>
       <main className="flex flex-col md:flex-row gap-8">
         {/* Shipping Address Section */}
-        <section className="flex-grow md:flex-[3] border border-gray-300 rounded-lg p-6">
+        <section className="flex-grow md:flex-[3] border border-gray-300 shadow-sm shadow-[#242424] rounded-lg p-6">
 
 
           <div className="flex items-center mb-6">
@@ -233,14 +233,16 @@ const Cart: React.FC = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-300 mt-48 pt-4 flex justify-between font-semibold">
+          <div className="border-t text-lg border-gray-300 mt-48 pt-4 flex justify-between font-semibold">
             <span>Order Total:</span>
             <span>{orderSummary.orderTotal.toLocaleString()}</span>
           </div>
-
-          <button className="mt-6 w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-slate-700 bg-gray-900">
+<div className='w-full flex justify-center'>
+   <button className="mt-6 w-[90%]  bg-black text-white py-3 rounded-lg font-semibold hover:bg-slate-700 bg-gray-900">
             Place Order
           </button>
+</div>
+         
         </section>
       </main>
     </div>

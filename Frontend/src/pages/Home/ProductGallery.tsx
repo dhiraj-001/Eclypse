@@ -41,12 +41,28 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ className = "" }) => {
             className="aspect-square"
             alt="Fashion Detail Close-up"
           />
-          <Card
+          {/* <Card
             hoverText="Eclypse"
             image="/images/img_frame_19.png"
             className="aspect-square hidden md:block"
             alt="Fashion Detail Close-up"
-          />
+          /> */}
+          <div className="aspect-square hidden md:block cursor-pointer relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <img src="/images/img_frame_19.png" alt="" />
+            <div className={`absolute inset-0 flex items-center justify-center text-7xl bg-black-700 opacity-0 transition-opacity duration-500 pointer-events-none z-10 hover:opacity-30 ${isHovered ? 'opacity-100' : 'opacity-0 '}`} >
+              <div>
+                Eclypse<img
+                  src="/images/img_group.svg"
+                  alt="Registered Mark"
+                  className="inline-block ml-2 h-6 w-6 align-top"
+                />
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </div>
