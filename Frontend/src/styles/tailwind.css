@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #070707;
+    --primary-foreground: #ffffff;
+    --primary-light: #1a1a1a;
+    --primary-dark: #000000;
+
+    /* Secondary Colors */
+    --secondary-background: #f6f6f6;
+    --secondary-foreground: #111111;
+    --secondary-light: #ffffff;
+    --secondary-dark: #d9d9d9;
+
+    /* Accent Colors */
+    --accent-color: #e34234;
+    --accent-foreground: #ffffff;
+    --accent-light: #ff5a4c;
+    --accent-dark: #c32e21;
+
+    /* Border Colors */
+    --border-primary: #3d3d3d;
+    --border-secondary: #c2c2c2;
+    --border-light: #d9d9d9;
+    --border-dark: #767676;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #d1d1d1;
+    --text-tertiary: #767676;
+    --text-dark: #111111;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-black {
+    background-color: var(--primary-background);
+  }
+
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+
+  .bg-secondary-white {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+
+  .bg-secondary-dark {
+    background-color: var(--secondary-dark);
+  }
+
+  .bg-accent-red {
+    background-color: var(--accent-color);
+  }
+
+  .bg-accent-light {
+    background-color: var(--accent-light);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--accent-dark);
+  }
+
+  /* Text Color Utilities */
+  .text-primary-white {
+    color: var(--text-primary);
+  }
+
+  .text-secondary-gray {
+    color: var(--text-secondary);
+  }
+
+  .text-tertiary-gray {
+    color: var(--text-tertiary);
+  }
+  
+  .text-dark {
+    color: var(--text-dark);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/Coolvetica-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
