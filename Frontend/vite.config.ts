@@ -2,8 +2,21 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tagger from "@dhiwise/component-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://eclypse-4sdw.onrender.com',
+        changeOrigin: true,  // Important for virtual hosted sites
+        secure: false,       // Good for development with self-signed certs
+        ws: true,            // Proxy websockets if needed
+      },
+    },
+    port: 4028,
+    host: "0.0.0.0",
+    strictPort: true,
+    allowedHosts: ['.amazonaws.com', '.builtwithrocket.new']
+  },
   build: {
     outDir: "dist",
   },
@@ -18,10 +31,4 @@ export default defineConfig({
       '@styles': '/src/styles',
     },
   },
-  server: {
-    port: 4028,
-    host: "0.0.0.0",
-    strictPort: true,
-    allowedHosts: ['.amazonaws.com', '.builtwithrocket.new']
-  }
 });

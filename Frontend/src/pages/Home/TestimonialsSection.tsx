@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Testimonial } from '../../types/Home';
+import axios from 'axios';
 
 interface TestimonialsSectionProps {
   className?: string;
@@ -7,30 +8,48 @@ interface TestimonialsSectionProps {
 
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "" }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      quote: "Understated, but unforgettable. It feels like it was made for me",
-      author: "Random Woman",
-      location: "NY, USA",
-      avatar: "/images/img_ellipse_3.png"
-    },
-    {
-      id: 2,
-      quote: "The quality and attention to detail is exceptional. Worth every penny.",
-      author: "Fashion Enthusiast",
-      location: "London, UK",
-      avatar: "/images/img_ellipse_4.png"
-    },
-    {
-      id: 3,
-      quote: "Elegant simplicity that stands out in a crowd. My new favorite piece.",
-      author: "Style Connoisseur",
-      location: "Paris, France",
-      avatar: "/images/img_ellipse_5.png"
-    }
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post("/api/user/customer-quotes"); // using proxy server
+        // console.log(response.data.data)
+        setTestimonials(response.data.data);
+      } catch (err: any) {
+        setError(err.message);
+      } 
+    };
+
+    fetchData();
+  }, []);
+
+// ----  fetched from backend -------
+
+  // const testimonials: Testimonial[] = [
+  //   {
+  //     id: 1,
+  //     quote: "Understated, but unforgettable. It feels like it was made for me",
+  //     author: "Random Woman",
+  //     location: "NY, USA",
+  //     avatar: "/images/img_ellipse_3.png"
+  //   },
+  //   {
+  //     id: 2,
+  //     quote: "The quality and attention to detail is exceptional. Worth every penny.",
+  //     author: "Fashion Enthusiast",
+  //     location: "London, UK",
+  //     avatar: "/images/img_ellipse_4.png"
+  //   },
+  //   {
+  //     id: 3,
+  //     quote: "Elegant simplicity that stands out in a crowd. My new favorite piece.",
+  //     author: "Style Connoisseur",
+  //     location: "Paris, France",
+  //     avatar: "/images/img_ellipse_5.png"
+  //   }
+  // ];
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) =>
@@ -60,15 +79,15 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
             <div className="md:w-9/12">
               <div className="relative">
                 <p className="text-2xl md:text-5xl text-white font-normal leading-tight mb-8 max-w-sm md:max-w-3xl">
-                  {testimonials[currentTestimonial].quote}
+                  {testimonials.length > 0 ? testimonials[currentTestimonial].quote : ''}
                 </p>
 
                 <div className="flex flex-col md:mt-28 gap-5">
                   <p className="text-xl text-white font-normal mb-1">
-                    {testimonials[currentTestimonial].author}
+                    {testimonials.length > 0 ? testimonials[currentTestimonial].author : ''}
                   </p>
                   <p className="text-lg text-gray-500 font-medium">
-                    {testimonials[currentTestimonial].location}
+                    {testimonials.length > 0 ? testimonials[currentTestimonial].location : ''}
                   </p>
                 </div>
               </div>
@@ -84,6 +103,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
 
               <div className="flex flex-col items-center space-y-6">
                 {(() => {
+                  if (testimonials.length === 0) return null;
                   const reordered = [
                     testimonials[currentTestimonial],
                     ...testimonials.filter((_, i) => i !== currentTestimonial),
@@ -92,15 +112,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
                     <button
                       key={testimonial.id}
                       onClick={() => setCurrentTestimonial(testimonials.findIndex(t => t.id === testimonial.id))}
-                      className={` rounded-full overflow-hidden  transition-all duration-500,
-          }} ${testimonial.id ===
-                          testimonials[currentTestimonial].id ? ' w-[120px] h-[120px] ' : 'w-20 h-20'
-                        }`}
+                      className={`rounded-full overflow-hidden transition-all duration-500 ${
+                        testimonial.id === testimonials[currentTestimonial].id ? 'w-[120px] h-[120px]' : 'w-20 h-20'
+                      }`}
                     >
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.author}
-                        className=" object-cover "
+                        className="object-cover"
                       />
                     </button>
                   ));
