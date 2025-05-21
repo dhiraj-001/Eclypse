@@ -42,7 +42,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({ className = "" }) => {
   return (
     <section className={`${className} !px-0 !mx-0`}>
       <div className="container !px-0">
-        <h2 className="text-4xl md:text-5xl px-2 text-white font-normal mb-12">
+        <h2 className="text-3xl md:text-5xl px-2 text-white font-normal mb-12">
           Silhouette No. 1 – Vermilion
         </h2>
 
@@ -65,7 +65,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({ className = "" }) => {
                 A tailored composition in motion. Cut from structured wool with a sculpted shoulder and softened hem, this piece captures presence without force. Worn here in the stillness of a city in motion.
               </p>
 
-              <div className="flex flex-wrap gap-4 mx-auto mb-8 w-full">
+              <div className="flex flex-wrap gap-3 md:gap-4 mx-auto mb-8 w-full">
                 <img
                   src="/images/img_frame_12.png"
                   alt="Product View 2"

@@ -11,7 +11,7 @@ const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ className = "" }) => 
         <div className="flex flex-col lg:">
           <div className="w-full mb-8 lg:mb-0">
             <div className='w-full flex flex-row justify-between items-end'>
-              <h1 className="text-7xl md:text-[107px] font-normal text-white leading-tight mb-4">
+              <h1 className="text-6xl md:text-[107px] font-normal text-white leading-tight mb-4">
                 Eclypse
                 <img
                   src="/images/img_group.svg"

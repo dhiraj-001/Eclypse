@@ -25,7 +25,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
     fetchData();
   }, []);
 
-// ----  fetched from backend -------
+// ----  fetched from backend api -------
 
   // const testimonials: Testimonial[] = [
   //   {
@@ -51,11 +51,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
   //   }
   // ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) =>
@@ -67,26 +62,26 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
     <section className={`py-16 bg-black ${className}`}>
       <div className="container mx-auto px-4">
         <div className="py-12 pb-32 border-b border-gray-700">
-          <h3 className="text-sm uppercase tracking-widest text-white text-opacity-80 mb-8">
+          <h3 className="text-xs md:text-sm uppercase tracking-widest text-white text-opacity-80 mb-8">
             OUR CUSTOMERS
           </h3>
 
           <div className="flex flex-col md:flex-row justify-between">
-            <div className="md:w-1/12 text-[118px] text-white font-['Coolvetica'] leading-none">
+            <div className="md:w-1/12 text-[80px] md:text-[118px] text-white font-['Coolvetica'] leading-none">
               &ldquo;
             </div>
 
             <div className="md:w-9/12">
               <div className="relative">
-                <p className="text-2xl md:text-5xl text-white font-normal leading-tight mb-8 max-w-sm md:max-w-3xl">
+                <p className="text-xl md:text-5xl text-white font-normal leading-tight mb-8 max-w-sm md:max-w-3xl">
                   {testimonials.length > 0 ? testimonials[currentTestimonial].quote : ''}
                 </p>
 
                 <div className="flex flex-col md:mt-28 gap-5">
-                  <p className="text-xl text-white font-normal mb-1">
+                  <p className="text-lg md:text-xl text-white font-normal mb-1">
                     {testimonials.length > 0 ? testimonials[currentTestimonial].author : ''}
                   </p>
-                  <p className="text-lg text-gray-500 font-medium">
+                  <p className="text-sm md:text-lg text-gray-500 font-medium">
                     {testimonials.length > 0 ? testimonials[currentTestimonial].location : ''}
                   </p>
                 </div>
@@ -113,7 +108,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = "
                       key={testimonial.id}
                       onClick={() => setCurrentTestimonial(testimonials.findIndex(t => t.id === testimonial.id))}
                       className={`rounded-full overflow-hidden transition-all duration-500 ${
-                        testimonial.id === testimonials[currentTestimonial].id ? 'w-[120px] h-[120px]' : 'w-20 h-20'
+                        testimonial.id === testimonials[currentTestimonial].id ? 'w-[120px] h-[120px] ' : 'w-20 h-20 hidden md:block'
                       }`}
                     >
                       <img

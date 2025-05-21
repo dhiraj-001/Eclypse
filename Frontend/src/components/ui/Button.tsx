@@ -36,7 +36,7 @@ type ButtonProps = Omit<
     onClick: () => void;
     shape: keyof typeof shapes;
     variant: keyof typeof variants | null;
-    size: keyof typeof sizes;
+   
     color: string;
   }>;
 
@@ -47,14 +47,14 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   rightIcon,
   shape,
   variant = "fill",
-  size = "xs",
+  
   color = "blue_gray_800",
   ...restProps
 }) => {
   return (
     <button
       className={`${className} flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap text-[25px] font-medium rounded-lg lg:text-[18px] ${shape && shapes[shape]
-        } ${size && sizes[size]} ${variant && variants[variant]?.[color as keyof (typeof variants)[typeof variant]]
+        }  ${variant && variants[variant]?.[color as keyof (typeof variants)[typeof variant]]
         }`}
       {...restProps}
     >
