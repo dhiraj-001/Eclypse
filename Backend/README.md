@@ -19,7 +19,7 @@ This is a basic Node.js backend server built with Express. It provides dummy dat
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/eclypse-backend.git
+   git clone https://github.com/dhiraj-001/Eclypse.git
    ```
 
 2. Navigate to the Backend directory:
