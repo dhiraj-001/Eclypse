@@ -24,7 +24,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ className = "" }) => {
           <Card
             hoverText="Premium wool blend in signature vermilion"
             image="/images/img_frame_18_489x424.png"
-            className="aspect-square md:aspect-auto"
+            className="aspect-square lg:aspect-auto"
             alt="Fashion Detail"
           />
 

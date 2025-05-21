@@ -52,7 +52,7 @@ const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ className = "" }) => 
               <div className="mt-20 flex items-center ">
                 <a
                   href="#learn-more"
-                  className="group flex items-center border-b border-[#e3e3e390] md:w-1/4 h-12 hover:bg-white hover:text-black-700 transition-all duration-400 group-hover:justify-center"
+                  className="group flex items-center border-b border-[#e3e3e390] lg:w-1/4 h-12 hover:bg-white hover:text-black-700 transition-all duration-400 group-hover:justify-center"
                 >
                   <span className="md:text-2xl text-[#e3e3e3] mr-1 pl-0 group-hover:mr-0 group-hover:text-black-700 transition-all duration-500 text-center w-full">
                     Learn more about Eclypse

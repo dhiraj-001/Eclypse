@@ -109,7 +109,7 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Neue Montreal';
   src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2');
   font-weight: 400;
@@ -131,4 +131,4 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
