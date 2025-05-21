@@ -1,57 +1,75 @@
-# Vidtube Backend
+# Backend Server
 
-Welcome to the **Vidtube Backend** repository! Vidtube is a dynamic platform that combines the best aspects of video sharing (like YouTube) and real-time social interaction (like Twitter). This backend provides all the essential functionalities to support seamless user engagement and content management.
+This is a basic Node.js backend server built with Express. It provides dummy data endpoints for testing and development purposes.
 
 ## 🚀 Features
 
-### 🔐 Account Creation and Management
-- Users can **register** and create their personalized profiles.
-- Secure **login** and authentication system.
-- Profile management features for users to update their details.
-
-### 🎥 Video Upload and Interaction
-- Users can **upload videos** effortlessly.
-- Like and **comment** on videos to engage with the community.
-- Smooth content streaming and interaction.
-
-### 📝 Community-Focused Tweet Section(yet to develop*)
-- A **tweet-style posting area** for real-time discussions.
-- Users can express opinions, share thoughts, and interact with each other.
-- Encourages a strong, engaged community.
+- Simple REST API endpoints with dummy data
+- CORS enabled for cross-origin requests
+- Environment variable support using dotenv
+- Body parsing middleware for JSON requests
 
 ## 🏗️ Tech Stack
+
 - **Backend:** Node.js, Express.js
-- **Database:** MongoDB 
-- **Authentication:** JWT 
+- **Middleware:** body-parser, cors, dotenv
 
 ## 🔧 Installation & Setup
+
 1. Clone the repository:
+
    ```sh
-   git clone https://github.com/your-username/vidtube-backend.git
+   git clone https://github.com/your-username/eclypse-backend.git
    ```
 
-2. Navigate to the project directory:
+2. Navigate to the Backend directory:
+
    ```sh
-   cd vidtube-backend
+   cd Backend
    ```
+
 3. Install dependencies:
-   ```sh
-   npm install
-   ```
- 4. Configure environment variables (create a .env file and add relevant credentials).
- 5. Start the server:
+
    ```sh
    npm install
    ```
 
-📌 Contribution & Support
-Feel free to contribute to Vidtube by submitting pull requests and raising issues! If you have any questions, reach out.
+4. Configure environment variables:
 
+   - Create a `.env` file in the Backend directory.
+   - Add any necessary environment variables.
 
-   🌟 Bringing communities together through videos and tweets! 🌟
+5. Start the server:
 
+   ```sh
+   npm start
+   ```
 
-Let me know if you want any modifications or extra details. Happy coding! 🚀
+The server will start and listen on the configured port (default is usually 3000).
+
+## 📁 Project Structure
+
+```
+Backend/
+├── src/
+│   ├── app.js            # Express app setup
+│   ├── index.js          # Server entry point
+│   ├── routes/           # API route definitions
+│   ├── controllers/      # Route handlers
+│   └── models/           # Data models (if any)
+├── public/               # Static assets (if any)
+├── package.json          # Backend dependencies and scripts
+└── README.md             # This file
+```
+
+## 📌 Contribution & Support
+
+Feel free to contribute by submitting pull requests or raising issues. For questions, please reach out.
+
+---
+Happy coding! 🚀
+   npm install
+   cd Backend
 
 
    

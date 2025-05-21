@@ -26,7 +26,7 @@ A modern React-based project utilizing the latest frontend technologies and tool
 
 2. Start the server:
   ```bash
-  npm run start
+  npm start
   # or
   yarn start
   ```
@@ -96,9 +96,7 @@ npm run build
 
 ## 🙏 Acknowledgments
 
-- Built with [Rocket.new
-](https: //rocket.new)
+
 - Powered by React and Vite
 - Styled with Tailwind CSS
 
-Made with ❤️ by Rocket.new
