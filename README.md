@@ -1,4 +1,5 @@
 # Eclypse Project
+live : https://eclypse-tau.vercel.app/
 
 This repository contains the full-stack Eclypse project, consisting of two main parts:
 
@@ -85,7 +86,7 @@ The frontend application will be available at `http://localhost:4028` (or the po
 
 ## Author
 
-Dhiraj
+Dhiraj Gogoi
 
 ---
 
