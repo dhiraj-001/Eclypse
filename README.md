@@ -92,4 +92,4 @@ Dhiraj Gogoi
 
 ## License
 
-ISC
+MIT License
